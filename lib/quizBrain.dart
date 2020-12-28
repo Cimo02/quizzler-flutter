@@ -35,6 +35,7 @@ class QuizBrain {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
     } else {
+      // do nothing
       print('No more quisetions!');
     }
   }
@@ -45,5 +46,17 @@ class QuizBrain {
 
   bool getQuestionAnswer() {
     return _questionBank[_questionNumber].questionAnswer;
+  }
+
+  bool isFinished() {
+    if (_questionNumber < _questionBank.length - 1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  void resetQuiz() {
+    _questionNumber = 0;
   }
 }
